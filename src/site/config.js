@@ -1,6 +1,6 @@
 System.config({
   baseURL: "/",
-  defaultJSExtensions: false,
+  defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
     "optional": [
@@ -8,19 +8,16 @@ System.config({
       "optimisation.modules.system"
     ]
   },
-  
   paths: {
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
   },
-
   packages: {
-    "jspm_packages/npm/": {
-      "format": "cjs",
-      "defaultExtension": "js"
+    "components": {
+      defaultJSExtensions: false,
+      defaultExtension: false
     }
   },
-
   map: {
     "babel": "npm:babel-core@5.8.24",
     "babel-runtime": "npm:babel-runtime@5.8.24",
