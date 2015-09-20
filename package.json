@@ -13,9 +13,10 @@
   },
   "jspm": {
     "directories": {
-      "baseURL": "src/site"
+      "baseURL": "src"
     },
     "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.5",
       "react": "npm:react@^0.13.3"
     },
     "devDependencies": {
