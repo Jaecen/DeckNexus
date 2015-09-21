@@ -14,7 +14,7 @@ System.config({
   },
 
   packages: {
-    "components": {
+    "js": {
       "defaultJSExtensions": false,
       "defaultExtension": false
     }
@@ -25,9 +25,18 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.24",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@1.1.4",
+    "immutable": "npm:immutable@3.7.5",
     "react": "npm:react@0.13.3",
+    "react-immutable-proptypes": "npm:react-immutable-proptypes@1.2.1",
+    "react-redux": "npm:react-redux@2.1.2",
+    "redux": "npm:redux@3.0.0",
+    "redux-devtools": "npm:redux-devtools@2.1.2",
+    "redux-immutablejs": "npm:redux-immutablejs@0.0.6",
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.5.0"
+    },
+    "github:jspm/nodelibs-domain@0.1.0": {
+      "domain-browser": "npm:domain-browser@1.1.4"
     },
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
@@ -53,6 +62,10 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:asap@2.0.3": {
+      "domain": "github:jspm/nodelibs-domain@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
     "npm:babel-runtime@5.8.24": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
@@ -69,6 +82,9 @@ System.config({
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
+    "npm:domain-browser@1.1.4": {
+      "events": "github:jspm/nodelibs-events@0.1.1"
+    },
     "npm:envify@3.4.0": {
       "jstransform": "npm:jstransform@10.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1",
@@ -78,8 +94,18 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:fbjs@0.2.1": {
+      "core-js": "npm:core-js@1.1.4",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "promise": "npm:promise@7.0.4",
+      "whatwg-fetch": "npm:whatwg-fetch@0.9.0"
+    },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:invariant@2.1.0": {
+      "envify": "npm:envify@3.4.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:jstransform@10.1.0": {
       "base62": "npm:base62@0.1.1",
@@ -92,9 +118,35 @@ System.config({
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
+    "npm:promise@7.0.4": {
+      "asap": "npm:asap@2.0.3",
+      "fs": "github:jspm/nodelibs-fs@0.1.2"
+    },
+    "npm:react-immutable-proptypes@1.2.1": {
+      "immutable": "npm:immutable@3.7.5"
+    },
+    "npm:react-json-tree@0.1.9": {
+      "babel-runtime": "npm:babel-runtime@5.8.24",
+      "react": "npm:react@0.14.0-rc1",
+      "react-mixin": "npm:react-mixin@1.7.0"
+    },
+    "npm:react-mixin@1.7.0": {
+      "object-assign": "npm:object-assign@2.1.1",
+      "smart-mixin": "npm:smart-mixin@1.2.1"
+    },
+    "npm:react-redux@2.1.2": {
+      "invariant": "npm:invariant@2.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "redux": "npm:redux@3.0.0"
+    },
     "npm:react@0.13.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "envify": "npm:envify@3.4.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:react@0.14.0-rc1": {
+      "envify": "npm:envify@3.4.0",
+      "fbjs": "npm:fbjs@0.2.1",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:readable-stream@1.1.13": {
@@ -106,6 +158,20 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.1",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
+    },
+    "npm:redux-devtools@2.1.2": {
+      "react-json-tree": "npm:react-json-tree@0.1.9",
+      "react-mixin": "npm:react-mixin@1.7.0",
+      "react-redux": "npm:react-redux@2.1.2",
+      "redux": "npm:redux@3.0.0"
+    },
+    "npm:redux-immutablejs@0.0.6": {
+      "immutable": "npm:immutable@3.7.5",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "redux": "npm:redux@3.0.0"
+    },
+    "npm:redux@3.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:source-map@0.1.31": {
       "amdefine": "npm:amdefine@1.0.0",

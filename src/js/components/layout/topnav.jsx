@@ -16,7 +16,7 @@ export default class extends React.Component {
 				<div id="navbar" className="navbar-collapse collapse">
 					<ul className="nav navbar-nav">
 						<li className="active"><a href="#">Decks</a></li>
-						<li><a href="#">League</a></li>
+						<li><a href="#">Leagues</a></li>
 					</ul>
 				</div>
 			</div>
