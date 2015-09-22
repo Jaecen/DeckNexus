@@ -1,30 +1,57 @@
-
-export const ADD_DECK = Symbol();
-export function addDeck(deck) {
+export const DECK_ADD = Symbol('deck add');
+export function deckAdd(deck) {
 	return {
-		type: ADD_DECK,
+		type: DECK_ADD,
+		payload: { },
+	};
+}
+
+export const DECK_REMOVE = Symbol('deck remove');
+export function deckRemove(deck) {
+	return {
+		type: DECK_REMOVE,
 		payload: {
 			deck: deck
 		},
 	};
 }
 
-export const REMOVE_DECK = Symbol();
-export function removeDeck(deckId) {
+export const DECK_SELECT = Symbol('deck select');
+export function deckSelect(deck) {
 	return {
-		type: REMOVE_DECK,
+		type: DECK_SELECT,
 		payload: {
-			deckId: deckId
+			deck: deck
+		}
+	}
+}
+
+export const DECK_UPDATE = Symbol('deck update');
+export function deckUpdate(deck) {
+	return {
+		type: DECK_UPDATE,
+		payload: {
+			deck: deck
 		},
 	};
 }
 
-export const SELECT_DECK = Symbol();
-export function selectDeck(deckId) {
+export const EDITOR_CHANGE_NAME = Symbol('editor change name');
+export function editorChangeName(name) {
 	return {
-		type: SELECT_DECK,
+		type: EDITOR_CHANGE_NAME,
 		payload: {
-			deckId: deckId
-		}
-	}
+			name,
+		}	
+	};
+}
+
+export const EDITOR_CHANGE_DECKLIST = Symbol('editor change decklist');
+export function editorChangeDecklist(decklist) {
+	return {
+		type: EDITOR_CHANGE_DECKLIST,
+		payload: {
+			decklist,
+		}	
+	};
 }

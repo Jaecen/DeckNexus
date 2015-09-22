@@ -1,28 +1,35 @@
 import React, { PropTypes, Component } from 'react';
-
-const selectedStyle = {
-	backgroundColor: '#CCC',
-};
-
+import classNames from 'classnames';
 
 export default class Item extends Component {
-	render() { 
-		const appliedStyle = this.props.isSelected
-			? selectedStyle
-			: {};
+	render() {
+		const appliedClassName = classNames(
+			'list-group-item', 
+			{'active': this.props.isSelected },
+			'clearfix');
 			
 		return (
-			<div style={ appliedStyle } onClick={ e => this.props.onItemSelected(this.props.deck.id) }>
-				<span>{ this.props.deck.name }</span>
-				<text> </text>
-				<span style={{ fontStyle: 'italic' }}>({ this.props.deck.id })</span>
-			</div>
+			<a 
+				href='#'
+				className={ appliedClassName } 
+				onClick={ event => this.props.onDeckSelect(this.props.deck) }> 
+				{ this.props.deck.name } ({ this.props.deck.id })
+				<span className="pull-right">
+					<button 
+						type="button" 
+						className="btn btn-danger"
+						onClick={ event => this.props.onDeckRemove(this.props.deck) }>
+						<span className="glyphicon glyphicon-remove"></span> Delete
+					</button>
+				</span>
+			</a>
 		);
 	}
 }
 
 Item.propTypes = {
-	onItemSelected: PropTypes.func.isRequired,
+	onDeckSelect: PropTypes.func.isRequired,
+	onDeckRemove: PropTypes.func.isRequired,
 	isSelected: PropTypes.bool,
 	deck: PropTypes.shape({
 		id: PropTypes.number.isRequired,

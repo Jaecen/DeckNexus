@@ -1,9 +1,11 @@
-import { SELECT_DECK } from '../actions.js';
+import { DECK_SELECT } from '../actions.js';
 
-export default function(state = null, action) {
+const initialState = null;
+
+export default function(state = initialState, action) {
 	switch(action.type) {
-		case SELECT_DECK:
-			return action.payload.deckId;
+		case DECK_SELECT:
+			return action.payload.deck.id;
 
 		default: 
 			return state;

@@ -1,23 +1,21 @@
 import React, { PropTypes, Component } from 'react';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import Item from './item.jsx';
 
 export default class List extends Component {
 	render() {
-		const selectedDeckId = (this.props.selectedDeck || {}).id;
-	 
-	 	console.log(selectedDeckId);
-	 
 		return (
-			<div>
-				{ 
-					this.props.decks.map((deck) => 
-						<Item
+			<div className='list-group'>
+				{
+					Object
+						.keys(this.props.decks)
+						.map(value => this.props.decks[value])
+						.map(deck => <Item
 							key={ deck.id }
 							deck={ deck }
-							isSelected = { deck.id === selectedDeckId }
-							onItemSelected={ this.props.onItemSelected } />
-					) 
+							isSelected = { this.props.selectedDeck && this.props.selectedDeck.id === deck.id }
+							onDeckRemove={ this.props.onDeckRemove } 
+							onDeckSelect={ this.props.onDeckSelect } 
+							/> )
 				}
 			</div>
 		);
@@ -25,6 +23,6 @@ export default class List extends Component {
 }
 
 List.propTypes = {
-	decks: ImmutablePropTypes.map.isRequired,
+	decks: PropTypes.object.isRequired,
 	selectedDeck: PropTypes.object,
 };

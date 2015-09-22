@@ -1,28 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectDeck } from '../actions.js'
+import * as Actions from '../actions.js'
 
 import Layout from './layout.jsx';
 import Decks from './decks.jsx';
 
-// TODO: Use https://github.com/faassen/reselect for better performance.
 function transform(state) {
-	return {
-		decks: state.decks,
-		selectedDeck: state.decks.get(String(state.selectedDeck)),	// TODO: Map expects keys to be strings. Not sure why.
-	};
+	return Object.assign(
+		{},
+		state, {
+			selectedDeck: state.decks[state.selectedDeck]
+		});
 }
 
 class App extends React.Component {
 	render() {
-		const { dispatch, decks, selectedDeck } = this.props;
+		const { dispatch } = this.props;
+		
 		return (
 			<Layout>
 				<Decks
-					decks={ decks }
-					selectedDeck={ selectedDeck }
-					onDeckSelected={ deckId => dispatch(selectDeck(deckId)) } />
+					decks={ this.props.decks }
+					selectedDeck={ this.props.selectedDeck }
+					editor={ this.props.editor }
+					
+					onDeckAdd={ () => dispatch(Actions.deckAdd()) }
+					onDeckRemove={ deckId => dispatch(Actions.deckRemove(deckId)) }
+					onDeckSelect={ deckId => dispatch(Actions.deckSelect(deckId)) }
+					onDeckUpdate={ deck => dispatch(Actions.deckUpdate(deck)) }
+					
+					onEditorChangeName={ name => dispatch(Actions.editorChangeName(name)) }
+					onEditorChangeDecklist={ decklist => dispatch(Actions.editorChangeDecklist(decklist)) }
+					/>
 			</Layout>
 		);
 	}

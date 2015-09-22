@@ -1,15 +1,26 @@
-import * as Immutable from 'immutable';
-import { ADD_DECK, REMOVE_DECK } from '../actions.js';
+import * as Actions from '../actions.js';
 
-export default function(state = Immutable.Map(), action) {
+const initialState = {};
+
+export default function(state = initialState, action) {
 	switch(action.type) {
-		case ADD_DECK: 
-			return state.set(
-				action.payload.deck.id, 
-				action.payload.deck);
+		case Actions.DECK_ADD: 
+			return state;
 			
-		case REMOVE_DECK: 
-			return state.delete(action.payload.deckId);
+		case Actions.DECK_REMOVE:
+			let newState = Object.assign(
+				{},
+				state);
+			delete newState[action.payload.deck.id];
+			return newState;
+
+		case Actions.DECK_UPDATE: 
+			return Object.assign(
+				{},
+				state,
+				{
+					[action.payload.deck.id]: action.payload.deck 
+				});
 
 		default: 
 			return state;
