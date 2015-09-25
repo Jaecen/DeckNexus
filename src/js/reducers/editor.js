@@ -33,6 +33,16 @@ export default function(state = initialState, action) {
 					decklist: action.payload.deck.decklist
 				});
 
+		case Actions.DECK_ADD:
+			return Object.assign(
+				{},
+				state,
+				{
+					id: null,
+					name: '',
+					decklist: ''
+				});
+
 		default: 
 			return state;
 	}
