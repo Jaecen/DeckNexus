@@ -1,13 +1,14 @@
-import React from 'react'; 
+import React, { PropTypes } from 'react';
 
-export default class extends React.Component {
-	render() { 
-		return (
-			<nav className="navbar navbar-default navbar-fixed-bottom">
-				<div className="container">
-					&copy; 2015 Jason Addington
-				</div>
-			</nav>
-		);
-	}
+const Footer = () => (
+	<nav className="navbar navbar-default navbar-fixed-bottom">
+		<div className="container">
+			&copy; 2015 Jason Addington
+		</div>
+	</nav>
+);
+
+Footer.propTypes = {
 };
+
+export default Footer;

@@ -1,27 +1,75 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>DeckNexus</title>
-		
-		<link rel="stylesheet" href="jspm_packages/github/twbs/bootstrap@3.3.5/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="jspm_packages/github/twbs/bootstrap@3.3.5/css/bootstrap-theme.min.css" />
-		<style>
-			body {
-				padding-top: 70px;
-				padding-bottom: 30px;
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>DeckNexus</title>
+
+	<link rel="stylesheet" href="jspm_packages/github/twbs/bootstrap@3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="jspm_packages/github/twbs/bootstrap@3.3.5/css/bootstrap-theme.min.css" />
+	<style>
+		body {
+			padding-top: 70px;
+			padding-bottom: 30px;
+		}
+
+		.loader-wrapper {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			text-align: center;
+			background-color: #080808;
+		}
+
+		.loader {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #fff;
+		}
+
+		/* Duplicate the .active/.open nav styles so they can be activated
+			on <a>'s directly rather than on the parent only */
+		.navbar-inverse .navbar-nav > * > a.active,
+		.navbar-inverse .navbar-nav > * > a.open {
+			background-image: -webkit-linear-gradient(top,#080808 0,#0f0f0f 100%);
+			background-image: -o-linear-gradient(top,#080808 0,#0f0f0f 100%);
+			background-image: -webkit-gradient(linear,left top,left bottom,from(#080808),to(#0f0f0f));
+			background-image: linear-gradient(to bottom,#080808 0,#0f0f0f 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff080808', endColorstr='#ff0f0f0f', GradientType=0);
+			background-repeat: repeat-x;
+			-webkit-box-shadow: inset 0 3px 9px rgba(0,0,0,.25);
+			box-shadow: inset 0 3px 9px rgba(0,0,0,.25);
+		}
+
+			.navbar-inverse .navbar-nav > * > a.active,
+			.navbar-inverse .navbar-nav > * > a.active:focus,
+			.navbar-inverse .navbar-nav > * > a.active:hover {
+				color: #fff;
+				background-color: #080808;
 			}
-		</style>
-	</head>
-	<body role="document">
-		<div id="main"></div>
-		<script src="jspm_packages/system.js"></script>
-		<script src="./config.js"></script>
-		<script>
-			System.import('./js/app.jsx');
-		</script>
-	</body>
+	</style>
+</head>
+<body role="document">
+	<div id="root">
+		<div class="loader-wrapper">
+			<div class="loader">
+				<div class="h1">
+					Hang on while we get things ready
+				</div>
+				<div class="small">
+					If this seems to take too long, check your dev console
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="jspm_packages/system.js"></script>
+	<script src="./config.js"></script>
+	<script>System.import('index.js');</script>
+</body>
 </html>

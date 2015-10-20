@@ -1,50 +1,58 @@
-import 'bootstrap';
-import 'jquery';
 import React from 'react';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import ReactDOM from 'react-dom';
+import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
+import { routerStateReducer, reduxReactRouter } from 'redux-router';
+import { devTools } from 'redux-devtools';
+import createHistory from 'history/lib/createBrowserHistory';
+import promiseMiddleware from 'redux-promise';
 
-import App from './components/app.jsx';
-import reducer from './reducers/app.js';
+import Root from './components/root.jsx';
+import editorReducer from './reducers/editorReducer.js';
+import browserReducer from './reducers/browserReducer.js';
+import viewerReducer from './reducers/viewerReducer.js';
+import { listDecks } from './actions/actions.js'
 
-// This would come from an API... if I had one =(
-var initialState = {
-	decks: {
-		1: {
-			id: 1,
-			name: 'Superfriends',
-			decklist: '20 Planeswalkers',
-		},
-		2: {
-			id: 2,
-			name: 'Jund',
-			decklist: '4 Bloodbraid Elf',
-		},
-		3: {
-			id: 3,
-			name: 'Goblins',
-			decklist: '4 Goblin Guide',
-		},
-		4: {
-			id: 4,
-			name: 'Abzan Junk',
-			decklist: '4 Siege Rhino',
+const reducer = combineReducers({
+	router: routerStateReducer,
+	editor: editorReducer,
+	browser: browserReducer,
+	viewer: viewerReducer,
+});
+
+/*********** Store *************
+{
+	viewer: {
+		deck: {
+			name: "lantern-control",
+			deck: { ... },
+
+			isFetching: false,
+			isErrored: false,
+			error: { ... },
+			updated: 1234567890,
 		},
 	},
-};
+	browser: {
+		deckList: {
+			decks: [ ... ],
+			isFetching: false,
+			isErrored: false,
+			error: { ... },
+			updated: 1234567890,
+		},
+	}
+}
+*/
 
-var store = createStore(reducer, initialState);
+const store = compose(
+	applyMiddleware(promiseMiddleware),
+	reduxReactRouter({ createHistory }),
+	devTools()
+)(createStore)(reducer);
 
-// Log the initial state
-console.log('inital state', store.getState());
+// Initialize state from API
+store.dispatch(listDecks());
 
-// Every time the state changes, log it
-store.subscribe(() =>
-  console.log('state change', store.getState())
-);
-
-React.render(
-	<Provider store={ store }>
-		{ () => <App /> }
-	</Provider>,
-	document.body);
+ReactDOM.render(
+	<Root store={store} />, 
+	document.getElementById('root'));
