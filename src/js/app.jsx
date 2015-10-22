@@ -10,7 +10,6 @@ import Root from './components/root.jsx';
 import editorReducer from './reducers/editorReducer.js';
 import browserReducer from './reducers/browserReducer.js';
 import viewerReducer from './reducers/viewerReducer.js';
-import { listDecks } from './actions/actions.js'
 
 const reducer = combineReducers({
 	router: routerStateReducer,
@@ -49,9 +48,6 @@ const store = compose(
 	reduxReactRouter({ createHistory }),
 	devTools()
 )(createStore)(reducer);
-
-// Initialize state from API
-store.dispatch(listDecks());
 
 ReactDOM.render(
 	<Root store={store} />, 

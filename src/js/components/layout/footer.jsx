@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
+import { Navbar } from 'react-bootstrap';
 
 const Footer = () => (
-	<nav className="navbar navbar-default navbar-fixed-bottom">
-		<div className="container">
-			&copy; 2015 Jason Addington
-		</div>
-	</nav>
+	<Navbar fixedBottom={true}>
+		&copy; 2015 Jason Addington
+	</Navbar>
 );
 
 Footer.propTypes = {

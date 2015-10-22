@@ -1,15 +1,18 @@
 ﻿import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Grid } from 'react-bootstrap';
 
 import TopNav from '../components/layout/topNav.jsx';
 import Footer from '../components/layout/footer.jsx';
 
 const Layout = ({children}) => (
-	<div className='layout-wrapper'>
+	<div className='layout'>
 		<TopNav />
-		<div className="layout-content" role="main">
-			{ children }
-		</div>
+		<Grid>
+			<div className="layout-content" role="main">
+				{ children }
+			</div>
+		</Grid>
 		<Footer />
 	</div>
 );

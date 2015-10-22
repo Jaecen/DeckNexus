@@ -1,13 +1,12 @@
 ﻿import React, { Component, PropTypes } from 'react';
 
+import CardLine from './cardLine.jsx';
+
 const Board = ({board}) => (
-	<div className='board-wrapper'>
-		<div>{board.type}:</div>
+	<div className='board'>
+		<h3>{board.type}</h3>
 		<div>
-			{board.cards.map(card => (
-				<div key={card.name}>
-					{card.quantity} {card.name}
-				</div>))}
+			{board.cards.map(card => <CardLine key={card.name} card={card} />)}
 		</div>
 	</div>
 );

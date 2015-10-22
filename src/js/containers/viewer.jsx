@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 
 import { getDeckByName } from '../actions/actions.js';
-import Board from '../components/viewer/board.jsx';
+import Deck from '../components/viewer/deck.jsx';
 
 class Viewer extends Component {
 	componentDidMount() {
@@ -23,25 +23,14 @@ class Viewer extends Component {
 
 		return (
 			<div className='viewer'>
-				<h1>
-					{name}
-					<small>by {user}</small>
-				</h1>
-				<div className="row">
-					<div className="col-md-6">
-						<Board board={deck.deck.decklist.boards[0]} />
-					</div>
-					<div className="col-md-6">
-						<Board board={deck.deck.decklist.boards[1]} />
-					</div>
-				</div>
+				<Deck deck={deck.deck} user={user} name={name} />
 			</div>
 		);
 	}
 }
 
 Viewer.propTypes = {
-	viewer: PropTypes.object
+	viewer: PropTypes.object,
 };
 
 export default connect(
