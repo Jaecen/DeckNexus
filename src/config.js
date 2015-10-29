@@ -22,20 +22,20 @@ System.config({
 
   map: {
     "allong.es": "npm:allong.es@0.14.0",
-    "babel": "npm:babel-core@5.8.25",
-    "babel-runtime": "npm:babel-runtime@5.8.25",
+    "babel": "npm:babel-core@5.8.32",
+    "babel-runtime": "npm:babel-runtime@5.8.29",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "classnames": "npm:classnames@2.2.0",
-    "core-js": "npm:core-js@1.2.2",
-    "history": "npm:history@1.12.5",
+    "core-js": "npm:core-js@1.2.3",
+    "history": "npm:history@1.13.0",
     "jquery": "github:components/jquery@2.1.4",
-    "react": "npm:react@0.14.0",
-    "react-bootstrap": "npm:react-bootstrap@0.27.2",
-    "react-dom": "npm:react-dom@0.14.0",
+    "react": "npm:react@0.14.1",
+    "react-bootstrap": "npm:react-bootstrap@0.27.3",
+    "react-dom": "npm:react-dom@0.14.1",
     "react-redux": "npm:react-redux@4.0.0",
     "react-router": "npm:react-router@1.0.0-rc3",
-    "react-router-bootstrap": "npm:react-router-bootstrap@0.19.2",
-    "redux": "npm:redux@3.0.3",
+    "react-router-bootstrap": "npm:react-router-bootstrap@0.19.3",
+    "redux": "npm:redux@3.0.4",
     "redux-actions": "npm:redux-actions@0.8.0",
     "redux-devtools": "npm:redux-devtools@2.1.5",
     "redux-promise": "npm:redux-promise@0.5.0",
@@ -83,7 +83,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.8.25": {
+    "npm:babel-runtime@5.8.29": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:buffer@3.5.1": {
@@ -96,7 +96,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
-    "npm:core-js@1.2.2": {
+    "npm:core-js@1.2.3": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -118,7 +118,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:fbjs@0.3.2": {
-      "core-js": "npm:core-js@1.2.2",
+      "core-js": "npm:core-js@1.2.3",
       "loose-envify": "npm:loose-envify@1.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "promise": "npm:promise@7.0.4",
@@ -130,22 +130,22 @@ System.config({
     },
     "npm:history@1.12.3": {
       "deep-equal": "npm:deep-equal@1.0.1",
-      "invariant": "npm:invariant@2.1.1",
+      "invariant": "npm:invariant@2.1.2",
       "qs": "npm:qs@4.0.0",
       "warning": "npm:warning@2.1.0"
     },
-    "npm:history@1.12.5": {
+    "npm:history@1.13.0": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "deep-equal": "npm:deep-equal@1.0.1",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
-      "invariant": "npm:invariant@2.1.1",
+      "invariant": "npm:invariant@2.1.2",
       "qs": "npm:qs@4.0.0",
       "warning": "npm:warning@2.1.0"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:invariant@2.1.1": {
+    "npm:invariant@2.1.2": {
       "loose-envify": "npm:loose-envify@1.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -188,26 +188,26 @@ System.config({
       "asap": "npm:asap@2.0.3",
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
-    "npm:react-bootstrap@0.27.2": {
-      "babel-runtime": "npm:babel-runtime@5.8.25",
+    "npm:react-bootstrap@0.27.3": {
+      "babel-runtime": "npm:babel-runtime@5.8.29",
       "classnames": "npm:classnames@2.2.0",
       "dom-helpers": "npm:dom-helpers@2.4.0",
       "keycode": "npm:keycode@2.1.0",
       "lodash-compat": "npm:lodash-compat@3.10.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@0.14.0",
-      "react-dom": "npm:react-dom@0.14.0",
+      "react": "npm:react@0.14.1",
+      "react-dom": "npm:react-dom@0.14.1",
       "react-overlays": "npm:react-overlays@0.5.0",
       "react-prop-types": "npm:react-prop-types@0.3.0",
       "uncontrollable": "npm:uncontrollable@3.1.3",
       "warning": "npm:warning@2.1.0"
     },
-    "npm:react-dom@0.14.0": {
-      "react": "npm:react@0.14.0"
+    "npm:react-dom@0.14.1": {
+      "react": "npm:react@0.14.1"
     },
     "npm:react-json-tree@0.1.9": {
-      "babel-runtime": "npm:babel-runtime@5.8.25",
-      "react": "npm:react@0.14.0",
+      "babel-runtime": "npm:babel-runtime@5.8.29",
+      "react": "npm:react@0.14.1",
       "react-mixin": "npm:react-mixin@1.7.0"
     },
     "npm:react-mixin@1.7.0": {
@@ -217,8 +217,8 @@ System.config({
     "npm:react-overlays@0.5.0": {
       "classnames": "npm:classnames@2.2.0",
       "dom-helpers": "npm:dom-helpers@2.4.0",
-      "react": "npm:react@0.14.0",
-      "react-dom": "npm:react-dom@0.14.0",
+      "react": "npm:react@0.14.1",
+      "react-dom": "npm:react-dom@0.14.1",
       "react-prop-types": "npm:react-prop-types@0.2.2",
       "warning": "npm:warning@2.1.0"
     },
@@ -230,27 +230,27 @@ System.config({
     },
     "npm:react-redux@3.1.0": {
       "hoist-non-react-statics": "npm:hoist-non-react-statics@1.0.3",
-      "invariant": "npm:invariant@2.1.1",
+      "invariant": "npm:invariant@2.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "redux": "npm:redux@3.0.3"
+      "redux": "npm:redux@3.0.4"
     },
     "npm:react-redux@4.0.0": {
       "hoist-non-react-statics": "npm:hoist-non-react-statics@1.0.3",
-      "invariant": "npm:invariant@2.1.1",
+      "invariant": "npm:invariant@2.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@0.14.0",
-      "redux": "npm:redux@3.0.3"
+      "react": "npm:react@0.14.1",
+      "redux": "npm:redux@3.0.4"
     },
-    "npm:react-router-bootstrap@0.19.2": {
-      "react": "npm:react@0.14.0",
+    "npm:react-router-bootstrap@0.19.3": {
+      "react": "npm:react@0.14.1",
       "react-router": "npm:react-router@1.0.0-rc3"
     },
     "npm:react-router@1.0.0-rc3": {
       "history": "npm:history@1.12.3",
-      "invariant": "npm:invariant@2.1.1",
+      "invariant": "npm:invariant@2.1.2",
       "warning": "npm:warning@2.1.0"
     },
-    "npm:react@0.14.0": {
+    "npm:react@0.14.1": {
       "envify": "npm:envify@3.4.0",
       "fbjs": "npm:fbjs@0.3.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -273,7 +273,7 @@ System.config({
       "react-json-tree": "npm:react-json-tree@0.1.9",
       "react-mixin": "npm:react-mixin@1.7.0",
       "react-redux": "npm:react-redux@3.1.0",
-      "redux": "npm:redux@3.0.3"
+      "redux": "npm:redux@3.0.4"
     },
     "npm:redux-promise@0.5.0": {
       "flux-standard-action": "npm:flux-standard-action@0.6.0"
@@ -281,7 +281,7 @@ System.config({
     "npm:redux-router@1.0.0-beta3": {
       "deep-equal": "npm:deep-equal@1.0.1"
     },
-    "npm:redux@3.0.3": {
+    "npm:redux@3.0.4": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:source-map@0.1.31": {
@@ -306,9 +306,9 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:uncontrollable@3.1.3": {
-      "invariant": "npm:invariant@2.1.1",
+      "invariant": "npm:invariant@2.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "react": "npm:react@0.14.0"
+      "react": "npm:react@0.14.1"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
