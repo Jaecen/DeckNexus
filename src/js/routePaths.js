@@ -1,6 +1,6 @@
 ﻿export default {
 	home: '/',
-	browser: '/decks',
-	editor: '/brew',
-	viewer: '/decks',
+	browser: '/view',
+	editor: '/edit',
+	viewer: '/view',
 };

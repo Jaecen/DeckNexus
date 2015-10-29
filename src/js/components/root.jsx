@@ -19,9 +19,10 @@ const Root = ({store}) => (
 				<Route path={routePaths.home} component={Layout}>
 					<IndexRoute component={Home} />
 					<Route path={routePaths.browser} component={Browser} />
-					<Route path={routePaths.editor} component={Editor} />
 					<Route path={`${routePaths.viewer}/:hash`} component={Viewer} />
 					<Route path={`${routePaths.viewer}/:user/:name`} component={Viewer} />
+					<Route path={`${routePaths.editor}/:hash`} component={Editor} />
+					<Route path={`${routePaths.editor}/:user/:name`} component={Editor} />
 				</Route>
 			</ReduxRouter>
 		</Provider>
